@@ -1,4 +1,4 @@
-# Your code here!
+#!c:/Strawberry/perl/bin/perl.exe
 use strict;
 use CGI;
 my $cgi = new CGI;
@@ -20,8 +20,8 @@ print $cgi->start_html(
 );
 print $cgi->h1({'class' => 'titulos', 'id' => 'titulos'}, 'Hola Mundo')."\n";
 print $cgi->p({'class' => 'parrafos', 'id' => 'parrafos'}, 'Hola soy un parrafo')."\n";
-print $cgi->br()  ."\m";
-print $cgi->br()  ."\m";
+print $cgi->br();
+print $cgi->br();
 print $cgi->strong('A comtinuacion vamos a crear una lista');
 print $cgi->ul({'id' => 'lista'}, ['uno', 'dos', 'tres', 'cuatro'])."\n";
 print $cgi->table({'id' => 'tabla',  'cellpadding' => '10', 'border' => '1' },
