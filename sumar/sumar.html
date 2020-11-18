@@ -7,8 +7,14 @@
 
 <h1>Sumar</h1>
 <form method='post' action='cgi-bin/sumar.cgi'>
-<input type='text' name='n1'> + <input type='text' name='n2'>
-<input type='submit' value='Sumar'>
+<input type='number' name='n1'> + <input type='number' name='n2'>
+<select name="oper" id="cars">
+  <option value="suma">Sumar</option>
+  <option value="div">Dividir</option>
+  <option value="res">Restar</option>
+  <option value="mul">Multiplicar</option>
+</select>
+<input type='submit' value='Enviar' name='bt-form'>
 </form>
 
 </body>
