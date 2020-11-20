@@ -9,8 +9,33 @@ my $datestring = strftime "%A %d de %B  de %Y a las %I:%M %p ", localtime;
 printf(uc "$datestring\n");
 formulario();
 reporte();
+ejercicio_1();
 print $clases{"end_div"};
 print $f->end_html();
+#Modifique el CGI anterior para que la imagen aparezca en cada una de las casillas de una tabla html de 20 filas y 4 columnas.
+sub ejercicio_1{
+	my $imagen = $f->img({
+		'src' => 'https://sites.google.com/a/episunsa.edu.pe/pw1/_/rsrc/1472775259348/cgis/logo.png',
+		'class' => 'img-fluid',
+		'width' => '100',
+		'height' => '100'
+	});
+	my $columna = 4;
+	my $fila = 20;
+	print $f->start_table({'class' => 'table table-responsive table-hover mt-2'});
+	print $f->start_Tr({'class' => 'bg-info'});
+	for (my $i = 1; $i <= $columna; $i++){
+		print $f->td([$imagen]);
+	}
+	print $f->end_Tr();
+	
+	for (my $j = 1; $j <= $fila; $j++){
+		print $f->start_Tr();
+		print $f->td([$imagen.$j])x4;
+	}
+	print $f->end_Tr();
+	print $f->end_table();
+}
 sub encabezado{
 	print $f->header('Content-Type: text/html;charset=iso-8859-1');
 	print $f->start_html(
@@ -115,6 +140,12 @@ while ((my $key, my $value) = each (%salario)){
 	# do whatever you want with $key and $value here ...
 	$value = $salario{$key};
 	print $f->div({'class', 'container-fluid'},"$key costs $value\n");
+}
+--------------------------------
+-------------------------------
+bucle for
+for (my $i=0; $i <= 9; $i++) {
+   print "$i\n";
 }
 --------------------------------
 =end comment
