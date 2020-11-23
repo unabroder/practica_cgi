@@ -1,0 +1,15 @@
+instalacion de jdk de java en centos
+yum install java-11-openjdk.i686
+creacion del directorio de geoserver
+mkdir /usr/share/geoserver
+entrando en el directorio
+cd /usr/share/geoserver
+descargando el paquete de geoserver
+wget http://sourceforge.net/projects/geoserver/files/GeoServer/2.18.1/geoserver-2.18.1-bin.zip
+extrayendo los ficheros
+unzip geoserver-2.18.1-bin.zip
+cd bin
+inicializando el servicio de geoserver
+sh startup.sh
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --reload
