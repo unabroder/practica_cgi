@@ -1,0 +1,22 @@
+Entramos a la terminal y tecleamos:
+sudo apt update
+sudo apt install openjdk-11-jre unzip
+# Instalar GeoServer
+sudo mkdir -p /opt/geoserver
+cd /opt/geoserver
+sudo wget -c https://netcologne.dl.sourceforge.net/project/geoserver/GeoServer/2.16.2/geoserver-2.16.2-bin.zip
+sudo unzip geoserver-2.16.2-bin.zip
+sudo mv geoserver-2.16.2/* .
+sudo rm -Rf geoserver-2.16.2*
+echo "export GEOSERVER_HOME=/opt/geoserver" >> ~/.profile
+. ~/.profile
+sudo chown -R proyectosbeta:proyectosbeta /opt/geoserver
+
+# Levantar GeoServer
+./bin/startup.sh
+
+Averiguamos la ip de nuestro server:
+ip addr show
+
+Abrimos con nuestro navegador favorito:
+http://192.168.1.202:8080/geoserver/web/
