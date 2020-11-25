@@ -1,5 +1,7 @@
 ######################Installation of mandatory PHP extensions:
 sudo apt install php-gd php-curl php-cli php-xml php-sqlite3 sqlite3 php-apcu php-intl openssl php-zip php-mbstring php-bz2
+#install apache2
+sudo apt install apache2
 ##################Unpack and register to web server
 Download the current Mapbender version and unzip it into /var/www/mapbender:
 wget https://mapbender.org/builds/mapbender-starter-current.tar.gz -O /var/www/mapbender-starter-current.tar.gz
