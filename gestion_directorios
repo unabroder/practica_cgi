@@ -1,0 +1,13 @@
+#crear un archivo
+cat > archivo.txt
+#renombrar un archivo
+mv nombreviejoarchivo1 nombrenuevoarchivo1
+#mover un archivo
+mv archivo.txt /home/usuario/Documentos/prueba
+#copiar un archivo
+cp archivo.txt /ruta/de/destino
+#copiar la carpeta
+cp  /* /ruta/de/destino
+cp /directorio /ruta/de/destino
+#eliminar archivo
+rm /home/pablinux/Documentos/-file
