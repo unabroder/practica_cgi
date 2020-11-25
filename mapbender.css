@@ -1,0 +1,26 @@
+.toolBar{
+  background-color:rgba(13, 35, 68, 0.9) !important;
+}
+.logoContainer{
+background-color:#ffffff !important;
+}
+.sidePaneTabItem{
+background-color: #3676da !important;
+}
+.accordionContainer .accordion.active > div{
+background-color:#1e447e !important;
+}
+.subTitle, .mb-element-layertree .themeContainer > .leaveContainer .layer-title, .mb-element-layertree .serviceContainer > .leaveContainer .layer-title, .mb-element-layertree .groupContainer > .leaveContainer .layer-title{
+color:#082c99;
+}
+.button, .tabContainerAlt .tab, .mb-element-printclient .ui-tabs .tab, .accordionContainer .accordion > div, .ui-datepicker > .ui-datepicker-header > a, .mapbender-element-tab-navigator > .ui-tabs-nav > li > a, .mapbender-element-result-table > .dataTables_wrapper > .paging_simple_numbers a, .mb-element-printclient .job-list > .dataTables_wrapper > .paging_simple_numbers a, .sideContent .mb-button, .sideContent .mb-gpsButton, .sideContent .mb-aboutButton{
+background-color:#2a518e !important;
+border: 1px solid #111315 !important;
+}
+
+.mb-element-overview .toggleOverview{
+background-color: #3676da !important;
+}
+.layer-menu .layer-slider-bar .layer-slider-handle{
+  background-color: #3676da !important;
+}
