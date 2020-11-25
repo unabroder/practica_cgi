@@ -1,0 +1,49 @@
+######################Installation of mandatory PHP extensions:
+sudo apt install php-gd php-curl php-cli php-xml php-sqlite3 sqlite3 php-apcu php-intl openssl php-zip php-mbstring php-bz2
+##################Unpack and register to web server
+Download the current Mapbender version and unzip it into /var/www/mapbender:
+wget https://mapbender.org/builds/mapbender-starter-current.tar.gz -O /var/www/mapbender-starter-current.tar.gz
+tar -zxf /var/www/mapbender-starter-current.tar.gz -C /var/www
+mv $(ls -d /var/www/*/ | grep mapbender) /var/www/mapbender/
+Configuration Apache 2.4
+
+Create the file /etc/apache2/sites-available/mapbender.conf with the following content:
+
+Alias /mapbender /var/www/mapbender/web/
+<Directory /var/www/mapbender/web/>
+ Options MultiViews FollowSymLinks
+ DirectoryIndex app.php
+ Require all granted
+
+ RewriteEngine On
+ RewriteBase /mapbender/
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteRule ^(.*)$ app.php [QSA,L]
+</Directory>
+
+Activate the site and reload Apache:
+
+a2ensite mapbender.conf
+service apache2 reload
+
+Directory rights
+
+sudo chown -R www-data:www-data /var/www/mapbender/app/logs
+sudo chown -R www-data:www-data /var/www/mapbender/app/cache
+sudo chown -R www-data:www-data /var/www/mapbender/web/uploads
+
+sudo chmod -R ug+w /var/www/mapbender/app/logs
+sudo chmod -R ug+w /var/www/mapbender/app/cache
+sudo chmod -R ug+w /var/www/mapbender/web/uploads
+
+sudo chmod -R ug+w /var/www/mapbender/app/db/demo.sqlite
+
+First steps
+
+The Mapbender installation can now be accessed under http://hostname/mapbender/. User data by default:
+
+username: “root”, password: “root”
+
+Troubleshooting is available via the following command (must be executed in the application directory):
+
+app/console mapbender:config:check
